@@ -6,10 +6,11 @@ services:
 language: java
 jdk: oraclejdk8
 
-# travis encrypt --com DOCKER_EMAIL="secure_value" -r "t0rjan/piggymetrics"
-# travis encrypt --com DOCKER_USER="secure_value" -r "t0rjan/piggymetrics"
-# travis encrypt --com DOCKER_PASS="secure_value" -r "t0rjan/piggymetrics"
-# travis encrypt --com DOCKER_URL="secure_value" -r "t0rjan/piggymetrics"
+
+#  travis encrypt --com DOCKER_EMAIL="" -r "t0rjan/piggymetrics"
+#  travis encrypt --com DOCKER_USER="" -r "t0rjan/piggymetrics"
+#  travis encrypt --com DOCKER_PASS="" -r "t0rjan/piggymetrics"
+#  travis encrypt --com DOCKER_URL="registry.cn-shenzhen.aliyuncs.com" -r "t0rjan/piggymetrics"
 env:
   global:
     - secure: "I2nvWANcxZ0EMBKaiMqFxxtVJQ6TEpGY03YXHoVPvTHwwXVOe9PcHfqRY7nOfLDTnZ5gMEAsEAMEkHVYPV7yiO5EWUKA/vmHh/VkkPt8W4zQ2gtPoULa4SSVsvWsqYD4MAb8yteE6fHDCV92y8bRIQnub35QJLrKD+FQhfIpJyzUauYvlFJyWYBFpJz8TcCSlNAcVYeqKRrys5C1SZDVv0FbL6uyooF56QpiDKkVeWeFwtaM13pIlo/Etn09qKbTv1nhhxgHOzkCWrGukQPjYA8x0ZfOfQ0LB8oom6V8a73ZGRtW/3i/87f9jqBXevncCQwVtJcGNiz1h4JkMyHnDUdEtDx4D3X2NZnow3kHpJ3C94Er1tLb6Lnn59mgFztlUyC/IDevBem3zaj3aHHUyEjT3Y/A05ksj00FfJF9oec6+2eGKPiClQg4w0IRQ3rVWjsrmK0ja3Zip9QCPOswaWijS7GuVNxHAn1rE5Ee/9Ok2j4cepqQytHL0Qi2cDIAUTSq+MKf4+6peXUJ2F90h0Gjbr2r31IEisif7hMsX4P90iLcb7YAq4LG5Yf6m8IhVjmP1/ExjzQZQdNBzavAOsqyCgsf64EaBL3kGzNUJxMcRXCHOHwXjZQfpiKPFcsPzy2bshvg0P8zc0cF9536lWHAiX5YGn0xsthtJzAF92o=" # DOCKER_EMAIL
