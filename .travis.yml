@@ -23,61 +23,61 @@ after_success:
   - export TAG=`if [ "$TRAVIS_BRANCH" == "master" ]; then echo "latest"; else echo $TRAVIS_BRANCH ; fi`
 
   # CONFIG SERVICE
-  - export CONFIG=t0rjan/piggymetrics-config
+  - export CONFIG=$DOCKER_URL/t0rjan/piggymetrics-config
   - docker build -t $CONFIG:$COMMIT ./config
   - docker tag $CONFIG:$COMMIT $CONFIG:$TAG
-  - docker push $DOCKER_URL:$CONFIG
+  - docker push $CONFIG
 
   # REGISTRY
-  - export REGISTRY=t0rjan/piggymetrics-registry
+  - export REGISTRY=$DOCKER_URL/t0rjan/piggymetrics-registry
   - docker build -t $REGISTRY:$COMMIT ./registry
   - docker tag $REGISTRY:$COMMIT $REGISTRY:$TAG
-  - docker push $DOCKER_URL:$REGISTRY
+  - docker push $REGISTRY
 
   # GATEWAY
-  - export GATEWAY=t0rjan/piggymetrics-gateway
+  - export GATEWAY=$DOCKER_URL/t0rjan/piggymetrics-gateway
   - docker build -t $GATEWAY:$COMMIT ./gateway
   - docker tag $GATEWAY:$COMMIT $GATEWAY:$TAG
-  - docker push $DOCKER_URL:$GATEWAY
+  - docker push $GATEWAY
 
   # AUTH SERVICE
-  - export AUTH_SERVICE=t0rjan/piggymetrics-auth-service
+  - export AUTH_SERVICE=$DOCKER_URL/t0rjan/piggymetrics-auth-service
   - docker build -t $AUTH_SERVICE:$COMMIT ./auth-service
   - docker tag $AUTH_SERVICE:$COMMIT $AUTH_SERVICE:$TAG
-  - docker push $DOCKER_URL:$AUTH_SERVICE
+  - docker push $AUTH_SERVICE
 
   # ACCOUNT SERVICE
-  - export ACCOUNT_SERVICE=t0rjan/piggymetrics-account-service
+  - export ACCOUNT_SERVICE=$DOCKER_URL/t0rjan/piggymetrics-account-service
   - docker build -t $ACCOUNT_SERVICE:$COMMIT ./account-service
   - docker tag $ACCOUNT_SERVICE:$COMMIT $ACCOUNT_SERVICE:$TAG
-  - docker push $DOCKER_URL:$ACCOUNT_SERVICE
+  - docker push $ACCOUNT_SERVICE
 
   # STATISTICS SERVICE
-  - export STATISTICS_SERVICE=t0rjan/piggymetrics-statistics-service
+  - export STATISTICS_SERVICE=$DOCKER_URL/t0rjan/piggymetrics-statistics-service
   - docker build -t $STATISTICS_SERVICE:$COMMIT ./statistics-service
   - docker tag $STATISTICS_SERVICE:$COMMIT $STATISTICS_SERVICE:$TAG
-  - docker push $DOCKER_URL:$STATISTICS_SERVICE
+  - docker push $STATISTICS_SERVICE
 
   # NOTIFICATION_SERVICE
-  - export NOTIFICATION_SERVICE=t0rjan/piggymetrics-notification-service
+  - export NOTIFICATION_SERVICE=$DOCKER_URL/t0rjan/piggymetrics-notification-service
   - docker build -t $NOTIFICATION_SERVICE:$COMMIT ./notification-service
   - docker tag $NOTIFICATION_SERVICE:$COMMIT $NOTIFICATION_SERVICE:$TAG
-  - docker push $DOCKER_URL:$NOTIFICATION_SERVICE
+  - docker push $NOTIFICATION_SERVICE
 
   # MONITORING
-  - export MONITORING=t0rjan/piggymetrics-monitoring
+  - export MONITORING=$DOCKER_URL/t0rjan/piggymetrics-monitoring
   - docker build -t $MONITORING:$COMMIT ./monitoring
   - docker tag $MONITORING:$COMMIT $MONITORING:$TAG
-  - docker push $DOCKER_URL:$MONITORING
+  - docker push $MONITORING
 
   # TURBINE STREAM SERVICE
-  - export TURBINE=t0rjan/piggymetrics-turbine-stream-service
+  - export TURBINE=$DOCKER_URL/t0rjan/piggymetrics-turbine-stream-service
   - docker build -t $TURBINE:$COMMIT ./turbine-stream-service
   - docker tag $TURBINE:$COMMIT $TURBINE:$TAG
-  - docker push $DOCKER_URL:$TURBINE
+  - docker push $TURBINE
 
   # MONGO DB
-  - export MONGO_DB=t0rjan/piggymetrics-mongodb
+  - export MONGO_DB=$DOCKER_URL/t0rjan/piggymetrics-mongodb
   - docker build -t $MONGO_DB:$COMMIT ./mongodb
   - docker tag $MONGO_DB:$COMMIT $MONGO_DB:$TAG
-  - docker push $DOCKER_URL:$MONGO_DB
+  - docker push $MONGO_DB
