@@ -8,17 +8,25 @@ services:
     build: config
     ports:
       - 8888:8888
+    volumes:
+      - ./config/target:/app
 
   registry:
     build: registry
+    volumes:
+      - ./registry/target:/app
 
   gateway:
     build: gateway
+    volumes:
+      - ./gateway/target:/app
 
   auth-service:
     build: auth-service
     ports:
       - 5000:5000
+    volumes:
+      - ./auth-service/target:/app
 
   auth-mongodb:
     build: mongodb
@@ -29,6 +37,8 @@ services:
     build: account-service
     ports:
       - 6000:6000
+    volumes:
+      - ./account-service/target:/app
 
   account-mongodb:
     build: mongodb
@@ -39,6 +49,8 @@ services:
     build: statistics-service
     ports:
       - 7000:7000
+    volumes:
+      - ./statistics-service/target:/app
 
   statistics-mongodb:
     build: mongodb
@@ -49,6 +61,8 @@ services:
     build: notification-service
     ports:
       - 8000:8000
+    volumes:
+      - ./notification-service/target:/app
 
   notification-mongodb:
     build: mongodb
@@ -57,6 +71,11 @@ services:
 
   monitoring:
     build: monitoring
+    volumes:
+      - ./monitoring/target:/app
+
 
   turbine-stream-service:
     build: turbine-stream-service
+    volumes:
+      - ./turbine-stream-service/target:/app
